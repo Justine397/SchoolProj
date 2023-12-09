@@ -86,7 +86,7 @@ public class Student extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(new Color(128, 0, 181));
+                g.setColor(new Color(44, 66 ,184));
                 g.fillRect(0, 0, 520, 30);
             }
         };
@@ -121,7 +121,7 @@ public class Student extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(new Color(128, 0, 181));
+                g.setColor(new Color(44, 66 ,184));
                 g.fillRect(0, 0, 520, 30);
             }
         };
@@ -156,7 +156,7 @@ public class Student extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(new Color(128, 0, 181));
+                g.setColor(new Color(44, 66 ,184));
                 g.fillRect(0, 0, 520, 30);
             }
         };

@@ -10,6 +10,7 @@ public class Teacher extends JFrame {
         setLayout(null);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        setLocationRelativeTo(null);
         
         teacherView();
 
@@ -65,6 +66,26 @@ public class Teacher extends JFrame {
         idL.setBounds(250, 280, 100, 15);
         idL.setFont(idF);
         teacherPanel.add(idL);
+
+        JSeparator separator1 = new JSeparator(SwingConstants.HORIZONTAL);
+        separator1.setBounds(30, 330, 520, 5); // Adjust position and size of the separator
+        teacherPanel.add(separator1);
+
+        String sections[] = { "SECTIONS", "Section 1", "Section 2", "Section 3", "Section 4" };
+        JComboBox<String> sectionBox = new JComboBox<>(sections);
+        sectionBox.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
+        sectionBox.setBounds(30, 370, 300, 30);
+        teacherPanel.add(sectionBox);
+
+        DefaultListModel<String> studentList = new DefaultListModel<>();
+        studentList.addElement("Student 1");
+        studentList.addElement("Student 2");
+        studentList.addElement("Student 3");
+        studentList.addElement("Student 5");
+        JList<String> Lists = new JList<>(studentList);
+        Lists.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 15));
+        Lists.setBounds(30, 420, 520, 300);
+        teacherPanel.add(Lists);
     }
 
     public static void main(String[] args) {
