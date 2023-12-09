@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Admin extends JFrame {
     JPanel adminPanel;
-    JButtons updateBtn, createBtn, deleteBtn;
+    // JButtons updateBtn, createBtn, deleteBtn;
     
     public Admin() {
         setTitle("Admin's View");
@@ -67,5 +67,14 @@ public class Admin extends JFrame {
         idL.setFont(idF);
         adminPanel.add(idL);
 
+        JSeparator separator1 = new JSeparator(SwingConstants.HORIZONTAL);
+        separator1.setBounds(30, 330, 520, 5); // Adjust position and size of the separator
+        adminPanel.add(separator1);
+
+        
+    }
+
+    public static void main(String[] args) {
+        Admin admin = new Admin();
     }
 }
