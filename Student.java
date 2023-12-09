@@ -7,12 +7,13 @@ import javax.imageio.ImageIO;
 
 public class Student extends JFrame {
     JPanel studentPanel;
-    
+
     public Student() {
         setTitle("Student's View");
         setSize(600, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        setLayout(null);
         setLocationRelativeTo(null);
 
         studentPanel();
@@ -24,7 +25,9 @@ public class Student extends JFrame {
         studentPanel = new JPanel();
         studentPanel.setLayout(null);
         studentPanel.setBackground(new Color(18, 22, 43));
-        studentPanel.setPreferredSize(new Dimension(560, 850)); // Adjust as needed
+        studentPanel.setBounds(0, 0, 600, 800);
+        studentPanel.setLayout(null);
+        add(studentPanel);
 
         JLabel infoL = new JLabel("YOUR INFORMATION");
         infoL.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 30));
@@ -76,9 +79,13 @@ public class Student extends JFrame {
         evaluationL.setFont(evaluationF);
         studentPanel.add(evaluationL);
 
-        JLabel yearLabel1 = new JLabel("1st YEAR");
-        Font yearFont1 = new Font("Arial Rounded MT Bold", Font.BOLD, 15);
-        yearLabel1.setBounds(250, 360, 200, 30); // Adjust position and size
+        JSeparator separator1 = new JSeparator(SwingConstants.HORIZONTAL);
+        separator1.setBounds(30, 350, 520, 5); // Adjust position and size of the separator
+        studentPanel.add(separator1);
+
+        JLabel yearLabel1 = new JLabel("YEAR GRADE");
+        Font yearFont1 = new Font("Arial Rounded MT Bold", Font.PLAIN, 20);
+        yearLabel1.setBounds(220, 410, 200, 30); // Adjust position and size
         yearLabel1.setFont(yearFont1);
         yearLabel1.setForeground(new Color(255, 255, 255)); // Set text color
         studentPanel.add(yearLabel1);
@@ -89,10 +96,10 @@ public class Student extends JFrame {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.setColor(new Color(44, 66 ,184));
-                g.fillRect(0, 0, 520, 30);
+                g.fillRect(0, 0, 520, 50);
             }
         };
-        rectPanel1.setBounds(30, 360, 520, 30);
+        rectPanel1.setBounds(30, 400, 520, 50);
         studentPanel.add(rectPanel1);
 
         // Creating the table for the first year
@@ -109,83 +116,8 @@ public class Student extends JFrame {
         DefaultTableModel tableModel1 = new DefaultTableModel(data1, columnNames1);
         JTable table1 = new JTable(tableModel1);
         JScrollPane scrollPane1 = new JScrollPane(table1);
-        scrollPane1.setBounds(30, 390, 520, 105);
+        scrollPane1.setBounds(30, 450, 520, 250);
         studentPanel.add(scrollPane1);
-
-        JLabel yearLabel2 = new JLabel("2nd YEAR");
-        Font yearFont2 = new Font("Arial", Font.BOLD, 15);
-        yearLabel2.setBounds(250, 520, 200, 30);
-        yearLabel2.setFont(yearFont2);
-        yearLabel2.setForeground(new Color(255, 255, 255));
-        studentPanel.add(yearLabel2);
-
-        JPanel rectPanel2 = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                g.setColor(new Color(44, 66 ,184));
-                g.fillRect(0, 0, 520, 30);
-            }
-        };
-        rectPanel2.setBounds(30, 520, 520, 30);
-        studentPanel.add(rectPanel2);
-
-        // Creating the table for the second year
-        String[] columnNames2 = { "Subject", "1st Sem", "2nd Sem", "Finals" };
-        Object[][] data2 = {
-                { "Math", "", "", "" },
-                { "Science", "", "", "" },
-                { "History", "", "", "" },
-                { "OOP", "", "", "" },
-                { "DSA", "", "", "" },
-                // Add more rows as needed
-        };
-
-        DefaultTableModel tableModel2 = new DefaultTableModel(data2, columnNames2);
-        JTable table2 = new JTable(tableModel2);
-        JScrollPane scrollPane2 = new JScrollPane(table2);
-        scrollPane2.setBounds(30, 550, 520, 105);
-        studentPanel.add(scrollPane2);
-
-        JLabel yearLabel3 = new JLabel("3rd YEAR");
-        Font yearFont3 = new Font("Arial", Font.BOLD, 15);
-        yearLabel3.setBounds(250, 680, 200, 30);
-        yearLabel3.setFont(yearFont3);
-        yearLabel3.setForeground(new Color(255, 255, 255));
-        studentPanel.add(yearLabel3);
-
-        JPanel rectPanel3 = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                g.setColor(new Color(44, 66 ,184));
-                g.fillRect(0, 0, 520, 30);
-            }
-        };
-        rectPanel3.setBounds(30, 680, 520, 30);
-        studentPanel.add(rectPanel3);
-
-        // Creating the table for the third year
-        String[] columnNames3 = { "Subject", "1st Sem", "2nd Sem", "Finals" };
-        Object[][] data3 = {
-                { "Math", "", "", "" },
-                { "Science", "", "", "" },
-                { "History", "", "", "" },
-                { "OOP", "", "", "" },
-                { "DSA", "", "", "" },
-                // Add more rows as needed
-        };
-
-        DefaultTableModel tableModel3 = new DefaultTableModel(data3, columnNames3);
-        JTable table3 = new JTable(tableModel3);
-        JScrollPane scrollPane3 = new JScrollPane(table3);
-        scrollPane3.setBounds(30, 710, 520, 105);
-        studentPanel.add(scrollPane3);
-
-        JScrollPane scrollPane = new JScrollPane(studentPanel);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        
-        add(scrollPane);
     }
 
     public static void main(String[] args) {
