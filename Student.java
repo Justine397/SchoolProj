@@ -21,13 +21,13 @@ public class Student extends JFrame {
     public void studentPanel() {
         JPanel studentPanel = new JPanel();
         studentPanel.setLayout(null);
-        studentPanel.setBackground(new Color(0, 204, 204));
+        studentPanel.setBackground(new Color(18, 22, 43));
         studentPanel.setPreferredSize(new Dimension(560, 850)); // Adjust as needed
 
         JLabel infoL = new JLabel("YOUR INFORMATION");
-        Font statF = new Font("Arial", Font.BOLD, 30);
-        infoL.setBounds(130, 20, 500, 40);
-        infoL.setFont(statF);
+        infoL.setFont(new Font("Arial Rounded MT Bold", Font.PLAIN, 30));
+        infoL.setForeground(new Color(255, 255, 255));
+        infoL.setBounds(120, 20, 500, 40);
         studentPanel.add(infoL);
 
         JSeparator separator = new JSeparator(SwingConstants.HORIZONTAL);
@@ -47,31 +47,35 @@ public class Student extends JFrame {
         }
 
         JLabel nameL = new JLabel("Name: ");
-        Font nameF = new Font("Arial", Font.PLAIN, 15);
+        Font nameF = new Font("Arial Rounded MT Bold", Font.PLAIN, 15);
+        nameL.setForeground(new Color(255, 255, 255));
         nameL.setBounds(250, 200, 100, 15);
         nameL.setFont(nameF);
         studentPanel.add(nameL);
 
         JLabel classL = new JLabel("Class: ");
-        Font classF = new Font("Arial", Font.PLAIN, 15);
+        Font classF = new Font("Arial Rounded MT Bold", Font.PLAIN, 15);
+        classL.setForeground(new Color(255, 255, 255));
         classL.setBounds(250, 240, 100, 15);
         classL.setFont(classF);
         studentPanel.add(classL);
 
         JLabel idL = new JLabel("ID No: ");
-        Font idF = new Font("Arial", Font.PLAIN, 15);
+        Font idF = new Font("Arial Rounded MT Bold", Font.PLAIN, 15);
+        idL.setForeground(new Color(255, 255, 255));
         idL.setBounds(250, 280, 100, 15);
         idL.setFont(idF);
         studentPanel.add(idL);
 
         JLabel evaluationL = new JLabel("EVALUATION: ");
-        Font evaluationF = new Font("Arial", Font.PLAIN, 15);
+        Font evaluationF = new Font("Arial Rounded MT Bold", Font.PLAIN, 15);
+        evaluationL.setForeground(new Color(255, 255, 255));
         evaluationL.setBounds(50, 310, 200, 15);
         evaluationL.setFont(evaluationF);
         studentPanel.add(evaluationL);
 
         JLabel yearLabel1 = new JLabel("1st YEAR");
-        Font yearFont1 = new Font("Arial", Font.BOLD, 15);
+        Font yearFont1 = new Font("Arial Rounded MT Bold", Font.BOLD, 15);
         yearLabel1.setBounds(250, 360, 200, 30); // Adjust position and size
         yearLabel1.setFont(yearFont1);
         yearLabel1.setForeground(new Color(255, 255, 255)); // Set text color
@@ -82,7 +86,7 @@ public class Student extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(new Color(64, 64, 64));
+                g.setColor(new Color(128, 0, 181));
                 g.fillRect(0, 0, 520, 30);
             }
         };
@@ -117,7 +121,7 @@ public class Student extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(new Color(64, 64, 64));
+                g.setColor(new Color(128, 0, 181));
                 g.fillRect(0, 0, 520, 30);
             }
         };
@@ -152,7 +156,7 @@ public class Student extends JFrame {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(new Color(64, 64, 64));
+                g.setColor(new Color(128, 0, 181));
                 g.fillRect(0, 0, 520, 30);
             }
         };
